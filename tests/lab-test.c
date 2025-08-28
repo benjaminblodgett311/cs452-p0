@@ -24,6 +24,12 @@ void test_subtract(void) {
   TEST_ASSERT_EQUAL(0, subtract(0, 0));
 }
 
+void test_multiply(void) {
+  TEST_ASSERT_EQUAL(15, multiply(5, 3));
+  TEST_ASSERT_EQUAL(-15, multiply(-5, 3));
+  TEST_ASSERT_EQUAL(0, multiply(0, 0));
+}
+
 void test_get_greeting(void) {
   char *greeting = get_greeting("Alice");
   TEST_ASSERT_NOT_NULL(greeting);
@@ -44,5 +50,6 @@ int main(void) {
   RUN_TEST(test_get_greeting);
   RUN_TEST(test_add);
   RUN_TEST(test_subtract);
+  RUN_TEST(test_multiply);
   return UNITY_END();
 }

@@ -1,24 +1,15 @@
-# Makefile Project Template
+# Greeting Message
+## CS452 Project 0
 
-This is a simple Makefile project template that can be used to build, test, and
-debug C projects. It includes support for debug builds, sanitizers, and code
-coverage.
+- Name: Benjamin Blodgett
+- Email: benjaminblodgett311@u.boisestate.edu
+- Class: 452-002
 
-## Tools and Dependencies
+## Experience
 
-- GNU Make
-- GCC or Clang
-- Address Sanitizer (ASan) for memory error detection
-- gcov and lcov for code coverage
-- gcovr for generating coverage reports
-- pandoc for generating docx reports (optional)
+This project was really easy. I was curious how you could get 100% code coverage so I tried dereferencing a malloc'd pointer in the branch where it returns null. I realized that this block was ommited from testing. I added a bit to this README.md for using live-serever because I think it's more convenient when the coverage files change rather than constantly reopening them in the browser.
 
-## Test Harness
-
-This project uses the Unity Test Framework for unit testing. Refer to the
-[Unity Getting Started Guide](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md) for more information on how to write and run tests.
-
-## Example Usage
+## Makefile
 
 To build the project run:
 
@@ -34,7 +25,7 @@ To run the executable:
 To run the unit tests:
 
 ```bash
-make check
+make test && make check
 ```
 
 To see all the configurations, run `make help`
@@ -54,18 +45,10 @@ Available targets:
   help      - Show this help message
 ```
 
-## VS Code Integration
+Report watching (run after unit tests):
 
-This project is designed to work well with Visual Studio Code. Configurations
-for debugging the application and unit tests are provided. Read about how to
-use the debugger in the [VS Code documentation](https://code.visualstudio.com/docs/editor/debugging).
-
-## Features
-
-- Build targets for debug and release modes
-- Support for Address Sanitizer (ASan)
-- Code coverage support and report generation
-- Simple structure for organizing source files and build artifacts
-
-
-![AI](docs/ai.png)
+```bash
+make report
+cd build/report/html
+live-server . watch=*.html
+```

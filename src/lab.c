@@ -10,6 +10,10 @@ int subtract(int a, int b) {
     return a - b;
 }
 
+int multiply(int a, int b) {
+    return a * b;
+}
+
 char *get_greeting(const char *restrict name)
 {
   if (name == NULL)
@@ -34,6 +38,8 @@ char *get_greeting(const char *restrict name)
     return NULL; // Memory allocation failed
   }  // GCOVR_EXCL_STOP
 
+
+  //greeting--;
 
   // Create the greeting message
   snprintf(greeting, alloc_size, "Hello, %s!", name);

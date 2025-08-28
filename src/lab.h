@@ -28,6 +28,13 @@ int add(int a, int b);
  */
 int subtract(int a, int b);
 
-
+/** * @brief multiplies two integers.
+ *
+ * This function multiplies two integers and returns the result.
+ * @param a The first integer.
+ * @param b The second integer.
+ * @return The product of a and b.
+ */
+int multiply(int a, int b);
 
 #endif // LAB_H
